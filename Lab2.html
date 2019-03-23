@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bài thực hành số 2</title>
+	<script type="text/javascript">
+		
+	
+			function Selecttong(){
+			var ckb1=document.getElementById("textCV");
+			var ckb2=document.getElementById("txtTT");
+			var ckb3=document.getElementById("txtCH");
+
+			var number=parseInt(document.getElementById("txtTR").value);
+			var name=document.getElementsByName("txtTen")[0].value;
+			var value1=0;
+			var value2=0;
+			var value3=0;
+			var value4=0;
+
+			var total;
+			if(ckb1.checked){
+				value1=100000;
+			}
+			if(ckb2.checked){
+				value2=1200000;
+			}
+			if(ckb3.checked){
+				value3=200000;
+			}
+		}
+		value4=number*80000;
+		total=value1+value2+value3+value4;
+		document.getElementById("txtTotal").value = "$"+total;
+		alert("Tiền làm đẹp của bạn "+ name+" là:" + total);
+	</script>
+</head>
+<body>
+	<form style="padding-left: 35%;padding-top: 20%;border-width: 20px">
+	<fieldset border="100px" style="width: 300px;background-color: brown;border-width: 25px;border-color: orange;border-style: outset;">
+		<legend style="color: red">Dental Payment Form</legend>
+		<table>
+			<tr>
+				<td> Tên khách hàng</td>
+				<td>
+					<input type="text" name="txtTen" size="20">
+
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="textCV">
+					 Cạo vôi
+				</td>
+				<td>$100.000</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="txtTT">
+					Tẩy trắng
+				</td>
+				<td>$1.200.000</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="txtCH">
+					Chụp Hình
+				</td>
+				<td>$200.000</td>
+			</tr>
+			<tr>
+				<td>
+					Trám răng
+					<input type="number" id="txtTR" value="0" style="width: 40px">
+				</td>
+				<td>$80.000/cái</td>
+			</tr>
+			<tr>
+				<td>Tổng</td>
+				<td>
+					<input type="text" id="txtTotal" readonly="readonly">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" name="btnThoat" value="Thoát">
+				</td>
+				<td style="text-align: right;">
+					<input type="button" name="btnThanhtoan" value="Thanh Toán" onclick="Selecttong()"/>
+					
+				</td>
+			</tr>
+
+
+		</table>
+		
+	</fieldset>
+	</form>
+</body>
+</html>

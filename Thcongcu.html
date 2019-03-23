@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Return first and last name from a form</title>
+	<script>
+		function js_style() {
+				var b = document.getElementById("text");
+				b.style.color = "blue";
+				
+			}
+		function js_styles() {
+				var b = document.getElementById("text");
+				b.style.fontSize = "24px";
+				
+			}
+		function getFormvalue() {
+				var fname= document.getElementsByName("fname")[0].value;
+				var lname= document.getElementsByName("lname")[0].value;
+				var kq=(fname + " " + lname);
+				alert(kq);
+				}
+		function doiMau() {
+				var b = document.getElementById("main");
+				b.style.backgroundColor = "blue";
+			}
+		function getAttibutes() {
+				var a= document.getElementById("somelink").href;
+				alert(a);
+				var b= document.getElementById("somelink").hreflang;
+				alert(b);
+				var c= document.getElementById("somelink").rel;
+				alert(c);
+				var d= document.getElementById("somelink").target;
+				alert(d);
+				}
+		function insert_Row() {
+			var table =document.getElementById("sampleTable");
+			var row = table.insertRow(0);
+			var cell1=row.insertCell(0);
+			var cell2=row.insertCell(1);
+			cell1.innerHTML="NEW CELL1";
+			cell2.innerHTML="NEW CELL2";
+			}
+		function changeContent(){
+			var a=document.getElementById("sampleTable").rows[0].cells;
+			a[0].innerHTML="ROW in table";
+			a[1].innerHTML="ROW in table";
+			}
+		function createTable(){
+			row=widow.prompt("Nhap dong", "0");
+			columm=widow.prompt("Nhap cot", "0");
+			var a=parseInt(row,10);
+			var b=parseInt(columm,10);
+			
+			var table =document.getElementById("myTable");
+			var tbl.Body=document.createElement("tbody");
+				for(var j=0;j<a;j++){
+					var row=document.createElement("tr")
+					for( var i=0;i<b;i++)
+					{
+						var cell=document.createElement("td");
+						var cellText=document.createTextNode("Dong" + j+ ", Cot " +i );
+						cell.appendChild(cellText);
+						row.appendChild(cell);
+					}
+					table.appendChild(tbody);
+				body.appendChild(table);
+			}
+			function removecolor(){
+		 			var x=document.getElementById("colorSelect");
+		 			x.remove(x.selectedIndex);
+		 }
+	</script>
+</head>
+<body style="background-color:red" id="main">
+	<p id='text'>JavaScript</p>
+	
+		<button id="jsstyle" onclick="js_style()">Style</button>
+		<button id="jsstyles" onclick="js_styles()">Kích thước</button>
+		<input type="button" value="Gold" onclick="doiMau()" />
+	<form id="form1" onsubmit=" getFormvalue()">
+		First name: <input type="text" name="fname" value="David"> <br>
+		Last name: <input type="text" name="lname" value="Beckkham"> <br>
+		<input type="submit" value "Submit">
+	
+	</form>
+	<p> 
+		<a id="somelink" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+			href="http://www.google.com/">
+		Google Website </a> </p>
+		<button onclick="getAttibutes()"> Click here to get attribute value</button>
+	<table id="sampleTable" border="1">
+		<tr>
+			<td>Row1 cell1 </td>
+			<td>Row1 cell2 </td>
+		</tr>
+		<tr>
+			<td>Row2 cell1</td>
+			<td>Row2 cell2</td>
+		</tr>
+		</table><br>
+		<input type="button" onclick="insert_Row()" value="Insert row">
+	<table id="myTable" border="1">
+		<tr>
+			<td>Row1 cell1 </td>
+			<td>Row1 cell2 </td>
+		</tr>
+		<tr>
+			<td>Row2 cell1</td>
+			<td>Row2 cell2</td>
+		</tr>
+		</table>
+		<form>
+			<input type="button" onclick="changeContent()" value="Change content">
+		</form>
+	<table id="myTable" border="1">
+	</table>
+	<form>
+		<input type="button" onclick="createTable(3,5)" value= " Create the table">
+	</form>
+	<form>
+		<select id="colorSelect">
+			<option>Red</option>
+			<option>Green</option>
+			<option>White</option>
+			<option>Black</option>
+		</select>
+		<input type="button" onclick="removecolor()" value="Select and Remove"> <br> </form>
+</body>
+</html>	
